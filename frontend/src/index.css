@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ============================================================
+   THEME VARIABLES — edit these to change the whole app's look!
+   ============================================================
+
+   HOW TO CUSTOMIZE COLORS:
+   Just change the hex values below. The whole app updates.
+
+   --brand       = main purple color (buttons, active nav, accents)
+   --brand2      = lighter purple (hover states)
+   --brand3      = pale purple text (chips, labels)
+   --gold        = gold/yellow (prices, highlights, premium)
+   --gold-light  = very light gold (gold backgrounds)
+   --bg          = darkest background (page bg)
+   --surface1    = slightly lighter (sidebar, topbar bg)
+   --surface2    = cards and raised elements
+   --surface3    = nested elements (inside cards)
+   --text        = main text color
+   --muted       = secondary/grey text
+   --border      = subtle border color
+
+   WANT A DIFFERENT VIBE? Try these combos:
+   - Blue + Teal:   --brand:#1D4ED8  --gold:#0D9488
+   - Pink + Orange: --brand:#BE185D  --gold:#EA580C
+   - Green + Gold:  --brand:#065F46  --gold:#D97706
+   - Red + Cream:   --brand:#991B1B  --gold:#F59E0B  + change --bg to #1A0A0A
+   ============================================================ */
+
+:root {
+  /* --- BRAND COLORS (change these!) --- */
+  --brand:   #5429B8;   /* main purple  */
+  --brand2:  #8B5CF6;   /* light purple */
+  --brand3:  #C4B5FD;   /* pale purple  */
+  --gold:    #F0C040;   /* main gold    */
+  --gold2:   #D4A017;   /* dark gold    */
+  --gold-bg: rgba(240,192,64,0.10); /* gold tint bg */
+
+  /* --- BACKGROUNDS --- */
+  --bg:       #0C0918;  /* page background */
+  --surface1: #160D2E;  /* topbar, sidebar  */
+  --surface2: #1E1240;  /* cards            */
+  --surface3: #241650;  /* nested / input   */
+
+  /* --- TEXT --- */
+  --text:  #EDE9FE;
+  --muted: #8B7BB5;
+
+  /* --- BORDER --- */
+  --border: rgba(139,92,246,0.16);
+
+  /* --- STATUS COLORS (usually leave these alone) --- */
+  --green:  #4ADE80;
+  --red:    #F87171;
+  --pink:   #F472B6;
+
+  /* --- MISC --- */
+  --radius:    14px;
+  --radius-sm: 8px;
+  --radius-pill: 50px;
+  --font: 'Space Grotesk', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+/* ---- LAYOUT ---- */
+.app-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.main-content { flex: 1; padding-bottom: 70px; }
+
+/* ---- TYPOGRAPHY ---- */
+h1,h2,h3 { font-family: var(--font); font-weight: 700; color: var(--text); }
+
+/* ---- BUTTONS ---- */
+.btn-primary {
+  background: var(--brand); color: #fff; border: none;
+  border-radius: var(--radius-sm); padding: 9px 20px;
+  font-family: var(--font); font-weight: 600; font-size: 13px;
+  cursor: pointer; transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-gold {
+  background: var(--gold); color: #1A0A3D; border: none;
+  border-radius: var(--radius-sm); padding: 9px 20px;
+  font-family: var(--font); font-weight: 700; font-size: 13px; cursor: pointer;
+}
+.btn-outline {
+  background: transparent; color: var(--muted);
+  border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 8px 18px; font-family: var(--font); font-weight: 500;
+  font-size: 13px; cursor: pointer;
+}
+.btn-outline:hover { border-color: var(--brand2); color: var(--brand3); }
+
+/* ---- CARD ---- */
+.card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* ---- CHIPS / BADGES ---- */
+.chip { display: inline-flex; align-items: center; gap: 4px; border-radius: 6px; padding: 3px 8px; font-size: 10px; font-weight: 600; }
+.chip-p  { background: rgba(139,92,246,0.18); color: var(--brand3); }
+.chip-g  { background: rgba(240,192,64,0.14); color: var(--gold); }
+.chip-gr { background: rgba(74,222,128,0.12); color: var(--green); }
+.chip-r  { background: rgba(248,113,113,0.12); color: var(--red); }
+.chip-pk { background: rgba(244,114,182,0.12); color: var(--pink); }
+
+/* ---- FORM INPUTS ---- */
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 5px; }
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  background: var(--surface3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  font-size: 13px;
+  font-family: var(--font);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: var(--brand2); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--muted); }
+
+/* ---- SECTION ---- */
+.section { padding: 16px; }
+.section-title {
+  font-size: 14px; font-weight: 600; color: var(--text);
+  margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;
+}
+.section-title a { font-size: 11px; color: var(--brand2); text-decoration: none; font-weight: 500; }
+
+.divider { height: 1px; background: var(--border); margin: 0; }
+
+/* ---- LOADING ---- */
+.loading { display: flex; justify-content: center; padding: 40px; }
+.spinner {
+  width: 32px; height: 32px;
+  border: 2px solid var(--border);
+  border-top-color: var(--brand2);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---- EMPTY STATE ---- */
+.empty-state { text-align: center; padding: 40px 20px; color: var(--muted); }
+.empty-state .emoji { font-size: 44px; margin-bottom: 10px; }
+.empty-state p { font-size: 13px; }
+
+/* ---- GRID ---- */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+
+/* ---- BENTO GRID ---- */
+.bento { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; }
+@media (max-width: 700px) {
+  .bento { grid-template-columns: 1fr 1fr; }
+  .bcard.tall { grid-row: span 1; }
+  .bcard.wide { grid-column: span 2; }
+}
+@media (max-width: 480px) {
+  .bento { grid-template-columns: 1fr; }
+  .bcard.wide { grid-column: span 1; }
+}
+
+/* ---- TABS ---- */
+.module-tabs { display: flex; gap: 0; background: var(--surface1); border-bottom: 1px solid var(--border); overflow-x: auto; }
+.module-tabs::-webkit-scrollbar { display: none; }
+.mtab {
+  display: flex; align-items: center; gap: 5px; padding: 11px 16px;
+  font-size: 12px; font-weight: 500; color: var(--muted); cursor: pointer;
+  border-bottom: 2px solid transparent; white-space: nowrap;
+}
+.mtab.active { color: var(--brand3); border-bottom-color: var(--brand2); }
+.mtab i { font-size: 15px; }
+.mtab-badge {
+  background: rgba(240,192,64,0.15); color: var(--gold);
+  border-radius: 4px; padding: 1px 5px; font-size: 9px; font-weight: 700;
+}
+
+/* ---- DESKTOP LAYOUT ---- */
+@media (min-width: 768px) {
+  body { max-width: 100%; }
+  .app-layout { display: grid; grid-template-columns: 220px 1fr; grid-template-rows: 56px 1fr; min-height: 100vh; }
+  .app-topbar { grid-column: 1/-1; }
+  .app-sidebar { grid-row: 2; }
+  .app-main { grid-row: 2; overflow-y: auto; }
+  .main-content { padding-bottom: 0; }
+}

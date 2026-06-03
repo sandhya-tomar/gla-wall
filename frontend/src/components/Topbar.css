@@ -1,0 +1,26 @@
+.topbar {
+  background: var(--surface1);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center;
+  padding: 0 16px; height: 56px; gap: 12px;
+}
+.topbar-logo {
+  font-size: 17px; font-weight: 700; letter-spacing: -0.5px;
+  text-decoration: none; color: var(--text); white-space: nowrap;
+}
+.topbar-logo em  { color: var(--gold);   font-style: normal; }
+.topbar-logo span{ color: var(--brand3); }
+.topbar-search {
+  flex: 1; max-width: 340px;
+  background: var(--surface3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); display: flex; align-items: center;
+  padding: 7px 12px; gap: 8px;
+}
+.topbar-search i { color: var(--muted); font-size: 15px; }
+.topbar-search input {
+  background: none; border: none; outline: none;
+  color: var(--text); font-size: 12px; width: 100%; font-family: var(--font);
+}
+.topbar-search input::placeholder { color: var(--muted); }
+.topbar-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.topbar-hi { font-size: 12px; color: var(--muted); }

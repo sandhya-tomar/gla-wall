@@ -1,0 +1,21 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.app-topbar { position: sticky; top: 0; z-index: 100; }
+.app-sidebar { display: none; }
+.app-main { flex: 1; display: flex; flex-direction: column; }
+
+@media (min-width: 768px) {
+  .app-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 56px 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .app-topbar { grid-column: 1 / -1; }
+  .app-sidebar { display: block; border-right: 1px solid var(--border); background: var(--surface1); overflow-y: auto; }
+  .app-main { overflow-y: auto; }
+}

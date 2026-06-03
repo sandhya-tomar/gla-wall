@@ -1,0 +1,32 @@
+.mess-page-header {
+  background: var(--surface1);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 16px;
+}
+.mess-page-header h2 { font-size: 20px; margin-bottom: 4px; }
+.mess-page-header p  { font-size: 12px; color: var(--muted); }
+.mess-info-banner {
+  background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.18);
+  border-radius: 9px; padding: 10px 13px; font-size: 12px; color: var(--muted);
+  margin-bottom: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
+}
+.mess-info-banner i { color: var(--brand3); font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+.mess-full-card {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 14px; margin-bottom: 10px; cursor: pointer;
+  transition: border-color 0.12s;
+}
+.mess-full-card:hover { border-color: var(--brand2); }
+.mess-full-top { display: flex; gap: 12px; align-items: flex-start; }
+.mess-big-emoji { font-size: 40px; flex-shrink: 0; }
+.mess-full-info { flex: 1; }
+.mess-full-name   { font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 3px; }
+.mess-full-detail { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.mess-full-price  { font-size: 13px; font-weight: 700; color: var(--gold); margin-top: 6px; }
+.mess-full-badges { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
+.mess-expanded    { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 12px; cursor: default; }
+.mess-action-btn  {
+  background: rgba(74,222,128,0.1); color: var(--green);
+  border-radius: 7px; padding: 7px 14px; font-size: 13px; font-weight: 600;
+  text-decoration: none; display: inline-block;
+}

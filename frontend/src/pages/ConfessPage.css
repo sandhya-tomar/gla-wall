@@ -1,0 +1,44 @@
+.confess-header {
+  background: var(--surface1); border-bottom: 1px solid var(--border);
+  padding: 20px 16px; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+}
+.ch-left h2 { font-size: 20px; margin-bottom: 3px; }
+.ch-left p  { font-size: 12px; color: var(--muted); }
+.anon-info {
+  display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted);
+  background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.2);
+  border-radius: 7px; padding: 6px 10px; flex-shrink: 0;
+}
+.anon-info i { font-size: 15px; color: var(--brand3); }
+.anon-info strong { color: var(--brand3); }
+
+.post-box { padding: 14px; margin-bottom: 14px; }
+.pb-anon-tag { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+.pb-login-note a { color: var(--brand3); text-decoration: none; font-weight: 600; }
+.post-box textarea {
+  width: 100%; background: var(--surface3); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 12px; color: var(--text); font-size: 13px;
+  font-family: var(--font); resize: none; min-height: 80px; outline: none;
+  transition: border-color 0.15s;
+}
+.post-box textarea:focus { border-color: var(--brand2); }
+.post-box textarea::placeholder { color: var(--muted); }
+.pb-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
+.pb-count { font-size: 11px; color: var(--muted); }
+
+.confess-feed { display: flex; flex-direction: column; gap: 8px; }
+.cpost { padding: 14px; }
+.cpost-top { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 9px; }
+.cpost-avatar { font-size: 28px; flex-shrink: 0; line-height: 1; }
+.cpost-handle { font-size: 13px; font-weight: 600; color: var(--brand3); }
+.cpost-meta   { font-size: 10px; color: var(--muted); margin-top: 2px; }
+.cpost-time   { font-size: 10px; color: var(--muted); margin-left: auto; white-space: nowrap; }
+.cpost-text   { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 10px; }
+.cpost-actions{ display: flex; gap: 10px; }
+.cact-btn {
+  display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted);
+  background: none; border: none; cursor: pointer; font-family: var(--font);
+  transition: color 0.12s;
+}
+.cact-btn:hover { color: var(--brand3); }
+.cact-btn i { font-size: 15px; }

@@ -1,0 +1,8 @@
+.shop-card { display: block; text-decoration: none; color: inherit; transition: border-color 0.12s; }
+.shop-card:hover { border-color: var(--brand2); }
+.sc-img { height: 80px; display: flex; align-items: center; justify-content: center; font-size: 38px; background: var(--surface3); }
+.sc-body { padding: 10px 12px 12px; }
+.sc-name  { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.sc-stars { font-size: 11px; color: var(--gold); margin-bottom: 6px; }
+.sc-stars span { color: var(--muted); font-size: 10px; }
+.sc-tags  { display: flex; gap: 4px; flex-wrap: wrap; }

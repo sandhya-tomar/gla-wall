@@ -1,0 +1,45 @@
+.home-hero {
+  padding: 24px 16px 20px;
+  background: var(--surface1);
+  border-bottom: 1px solid var(--border);
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 10px; font-weight: 600; color: var(--muted);
+  border: 1px solid var(--border); border-radius: 5px; padding: 3px 9px;
+  margin-bottom: 10px; letter-spacing: 0.3px;
+}
+.hero-title { font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 6px; }
+.hero-title em { color: var(--gold); font-style: normal; }
+.hero-sub { font-size: 13px; color: var(--muted); }
+
+.bcard { padding: 14px; }
+.bcard.tall { grid-row: span 2; }
+.bcard.wide { grid-column: span 2; }
+.bcard-label { font-size: 10px; color: var(--muted); font-weight: 500; margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
+.bcard-label i { font-size: 13px; }
+.bcard-title { font-size: 15px; font-weight: 600; }
+.bcard-price { font-size: 22px; font-weight: 700; color: var(--gold); margin-top: 5px; }
+.bcard-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.big-emoji { font-size: 40px; margin-bottom: 8px; display: block; }
+
+.mini-confess { background: var(--surface3); border-radius: 9px; padding: 10px; margin-bottom: 8px; }
+.mini-confess:last-child { margin-bottom: 0; }
+.mc-top { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+.mc-avatar { width: 26px; height: 26px; border-radius: 50%; background: var(--brand); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.mc-handle { font-size: 11px; font-weight: 600; color: var(--brand3); }
+.mc-time { font-size: 10px; color: var(--muted); margin-left: auto; }
+.mc-text { font-size: 12px; color: var(--text); line-height: 1.5; }
+.mc-acts { display: flex; gap: 10px; margin-top: 6px; font-size: 11px; color: var(--muted); }
+.mc-acts span { display: flex; align-items: center; gap: 3px; }
+
+.cmp-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+.cmp-row:last-child { margin-bottom: 0; }
+.cmp-name { font-size: 11px; color: var(--muted); width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cmp-bar { flex: 1; height: 6px; background: var(--surface3); border-radius: 50px; overflow: hidden; }
+.cmp-fill { height: 100%; border-radius: 50px; transition: width 0.3s; }
+.cmp-val { font-size: 11px; font-weight: 700; color: var(--gold); width: 36px; text-align: right; }
+
+.hiring-card .hc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.hc-company { font-size: 14px; font-weight: 700; }
+.hc-role { font-size: 11px; color: var(--muted); }

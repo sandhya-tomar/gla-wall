@@ -1,0 +1,15 @@
+.write-review { padding: 14px; margin: 14px 0; }
+.write-review-title { font-size: 15px; margin-bottom: 3px; }
+.write-review-sub { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+.star-picker { display: flex; gap: 5px; margin-bottom: 12px; }
+.star { font-size: 26px; cursor: pointer; color: var(--surface3); transition: color 0.1s; }
+.star.active { color: var(--gold); }
+.review-success {
+  background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.2);
+  border-radius: 10px; padding: 14px; display: flex; align-items: center;
+  gap: 8px; font-size: 13px; color: var(--green); font-weight: 600; margin: 14px 0;
+}
+.review-success button {
+  margin-left: auto; background: none; border: none; color: var(--green);
+  cursor: pointer; font-size: 11px; text-decoration: underline; font-family: var(--font);
+}
