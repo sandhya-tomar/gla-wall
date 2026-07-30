@@ -26,37 +26,29 @@
    - Green + Gold:  --brand:#065F46  --gold:#D97706
    - Red + Cream:   --brand:#991B1B  --gold:#F59E0B  + change --bg to #1A0A0A
    ============================================================ */
-
 :root {
-  /* --- BRAND COLORS (change these!) --- */
-  --brand:   #5429B8;   /* main purple  */
-  --brand2:  #8B5CF6;   /* light purple */
-  --brand3:  #C4B5FD;   /* pale purple  */
-  --gold:    #F0C040;   /* main gold    */
-  --gold2:   #D4A017;   /* dark gold    */
-  --gold-bg: rgba(240,192,64,0.10); /* gold tint bg */
+  --brand:   #6D5DF6;
+  --brand2:  #8B7CF8;
+  --brand3:  #C4B5FD;
+  --gold:    #F6C344;
+  --gold2:   #D4A017;
+  --gold-bg: rgba(246,195,68,0.12);
 
-  /* --- BACKGROUNDS --- */
-  --bg:       #0C0918;  /* page background */
-  --surface1: #160D2E;  /* topbar, sidebar  */
-  --surface2: #1E1240;  /* cards            */
-  --surface3: #241650;  /* nested / input   */
+  --bg:       #161225;
+  --surface1: rgba(255,255,255,0.06);
+  --surface2: rgba(255,255,255,0.06);
+  --surface3: rgba(255,255,255,0.04);
 
-  /* --- TEXT --- */
-  --text:  #EDE9FE;
-  --muted: #8B7BB5;
+  --text:  #F3F0FF;
+  --muted: #9D8EC4;
+  --border: rgba(255,255,255,0.08);
 
-  /* --- BORDER --- */
-  --border: rgba(139,92,246,0.16);
-
-  /* --- STATUS COLORS (usually leave these alone) --- */
   --green:  #4ADE80;
   --red:    #F87171;
   --pink:   #F472B6;
 
-  /* --- MISC --- */
-  --radius:    14px;
-  --radius-sm: 8px;
+  --radius:      14px;
+  --radius-sm:   8px;
   --radius-pill: 50px;
   --font: 'Space Grotesk', sans-serif;
 }
@@ -65,12 +57,72 @@
 
 body {
   font-family: var(--font);
-  background: var(--bg);
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text);
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(10,8,20,0.45),
+    rgba(10,8,20,0.55)
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background-image: url('/background1.png');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--text);
   max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
   font-size: 14px;
+  backdrop-filter: blur(0px);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(12, 9, 24, 0.75);  /* dark purple overlay */
+  z-index: -1;
+}
+
+.card {
+  background: rgba(26, 16, 53, 0.55);
+  border: 1px solid rgba(139,92,246,0.25);
+  border-radius: var(--radius);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* ---- LAYOUT ---- */
@@ -109,6 +161,7 @@ h1,h2,h3 { font-family: var(--font); font-weight: 700; color: var(--text); }
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
+
 
 /* ---- CHIPS / BADGES ---- */
 .chip { display: inline-flex; align-items: center; gap: 4px; border-radius: 6px; padding: 3px 8px; font-size: 10px; font-weight: 600; }

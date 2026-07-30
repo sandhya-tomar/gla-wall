@@ -59,7 +59,7 @@ export default function ShopsPage() {
         {loading
           ? <div className="loading"><div className="spinner"></div></div>
           : shops.length > 0
-            ? <div className="cards-grid">{shops.map(s => <ShopCard key={s._id} shop={s} />)}</div>
+            ? <div className="cards-grid">{shops.map(s => <ShopCard key={s.id} shop={s} />)}</div>
             : <div className="empty-state"><div className="emoji">🔍</div><p>No shops found. Try a different search!</p></div>
         }
       </div>

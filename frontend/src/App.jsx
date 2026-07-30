@@ -18,7 +18,10 @@ import './App.css'
 
 export default function App() {
   return (
+    
     <AuthProvider>
+
+      
       <div className="app-layout">
         <div className="app-topbar"><Topbar /></div>
         <div className="app-sidebar"><Sidebar /></div>

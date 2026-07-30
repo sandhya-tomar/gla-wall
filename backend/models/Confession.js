@@ -11,6 +11,7 @@ const Confession = sequelize.define('Confession', {
   likes:     { type: DataTypes.INTEGER, defaultValue: 0 },
   userId:    { type: DataTypes.INTEGER, allowNull: true },  // never exposed in API
   isVisible: { type: DataTypes.BOOLEAN, defaultValue: true },
+  reports:   { type: DataTypes.INTEGER, defaultValue: 0 },
 }, { tableName: 'confessions', timestamps: true });
 
 module.exports = Confession;

@@ -18,23 +18,35 @@ export default function ConfessPage() {
 
   useEffect(() => { load() }, [load])
 
-  const submit = async (e) => {
-    e.preventDefault()
-    if (!isLoggedIn) { navigate('/login'); return }
-    if (!text.trim()) return
-    setPosting(true)
-    try {
-      await axios.post('/api/confessions', { text })
-      setText('')
-      load()
-    } catch { alert('Could not post') }
-    setPosting(false)
-  }
-
-  const like = async (id) => {
-    await axios.patch(`/api/confessions/${id}/like`)
+const submit = async (e) => {
+  e.preventDefault()
+  if (!isLoggedIn) { navigate('/login'); return }
+  if (!text.trim()) return
+  setPosting(true)
+  try {
+    const token = JSON.parse(localStorage.getItem('gff_user'))?.token
+    await axios.post('/api/confessions', { text }, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+    setText('')
     load()
-  }
+  } catch (err) { alert(err.response?.data?.message || 'Could not post') }
+  setPosting(false)
+}
+
+const like = async (id) => {
+  const token = JSON.parse(localStorage.getItem('gff_user'))?.token
+  await axios.patch(`/api/confessions/${id}/like`, {}, {
+    headers: { Authorization: `Bearer ${token}` }
+  })
+  load()
+}
+
+  const report = async (id) => {
+  await axios.patch(`/api/confessions/${id}/report`)
+  alert('Reported! Review hoga.')
+  load()
+}
 
   return (
     <div className="confess-page">
@@ -72,8 +84,8 @@ export default function ConfessPage() {
         </div>
 
         <div className="confess-feed">
-          {posts.map(p => (
-            <div key={p._id} className="cpost card">
+{posts.map(p => (
+  <div key={p.id} className="cpost card">  {/* _id → id */}
               <div className="cpost-top">
                 <div className="cpost-avatar">{p.anonEmoji}</div>
                 <div>
@@ -84,7 +96,7 @@ export default function ConfessPage() {
               </div>
               <p className="cpost-text">{p.text}</p>
               <div className="cpost-actions">
-                <button className="cact-btn" onClick={() => like(p._id)}>
+                <button className="cact-btn" onClick={() => like(p.id)}>
                   <i className="ti ti-heart" aria-hidden="true"></i> {p.likes}
                 </button>
                 <button className="cact-btn">
